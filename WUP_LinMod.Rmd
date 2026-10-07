@@ -53,21 +53,59 @@ myData=mtcars
 plot(mpg~disp,data=mtcars, pch=19)
 ```
 
-this scatter plot demonstrates that as disp increases, mpg decreases
+this scatter plot demonstrates that as disp increases, mpg decreases.
 
 
 ### Numerical results
 
+```{r}
+
+cor(mtcars$mpg,mtcars$disp)
+```
+
 
 ### Inferential  (Build model.1)
+```{r}
+model.1 <- lm(mpg~disp,data=mtcars)
+summary.lm(model.1)
+```
 
 #### Predict at target point
+```{r}
+newdata=data.frame(disp=183,hp=250)
+predict(model.1,newdata)
+```
+
 
 
 #### scatterplot with model fit
   
 
-## Model 2 SIM~GRIP
+## Model 2 mpg~hp
+```{r}
+plot(mpg~hp,data=mtcars, pch=19)
+```
+
+this scatter plot demonstrates that as disp increases, mpg decreases.
+
+
+### Numerical results
+
+```{r}
+
+cor(mtcars$mpg,mtcars$hp)
+```
+
+
+### Inferential  (Build model.1)
+```{r}
+model.2 <- lm(mpg ~ hp, data=mtcars)
+summary.lm(model.2)
+```
+```{r}
+predict(model.2,newdata)
+```
+
 
 ### Now add in scatterplot
 
